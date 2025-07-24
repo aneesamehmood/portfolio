@@ -1,4 +1,4 @@
-# my portfolio site
+# my portfolio site ⭑.ᐟ
 
 this is my personal site – just a space to share some projects, a bit about me, and whatever else i feel like putting out there.
 
