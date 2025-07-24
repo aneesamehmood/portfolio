@@ -1,0 +1,206 @@
+.lanyard-wrapper {
+  perspective: 1200px;
+  transform-origin: top center;
+  animation: dropIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+html {
+  scroll-padding-top: 150px;
+}
+
+.lanyard-card {
+  width: 300px;
+  height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+  background: #1e293b;
+
+  /* REMOVE box-shadow */
+  box-shadow: none;
+
+  /* Optional: force block-level rendering and eliminate visual outline artifacts */
+  display: block;
+}
+
+.lanyard-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+}
+
+/* Drop from top animation */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-200px) rotateZ(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+}
+
+#card-canvas {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+#hero-text::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1.2em;
+  background-color: #ffffff;
+  margin-left: 4px;
+  animation: blink 1s step-start infinite;
+  vertical-align: -0.15em;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
+@font-face {
+  font-family: 'Autography';
+  src: url('/fonts/Autography.otf') format('opentype');
+
+}
+
+@font-face {
+  font-family: 'Breathing';
+  src: url('./fonts/Breathing.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Rushing';
+  src: url('./fonts/Rushingshine.otf') format('opentype');
+}
+
+.breathing {
+  font-family: 'Breathing', cursive;
+  color: white;
+  font-size: 1.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.annotation {
+  position: absolute;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  font-family: 'Breathing', cursive;
+  font-size: 1rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.top-arrow {
+  top: 20px;
+  left: 520px;
+}
+
+.screen-arrow {
+  top: 70px;
+  left: 520px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float 1.8s ease-in-out infinite;
+}
+
+.pixel-background {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.animate-wiggle {
+  animation: wiggle 1.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 2.2s ease-in-out infinite;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+  }
+
+  .fira-code {
+    font-family: 'Fira Code', monospace;
+  }
+
+   .animated-bg {
+    background: linear-gradient(120deg, #1e1b4b, #0f172a, #1e293b);
+    background-size: 600% 600%;
+    animation: gradientShift 30s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
